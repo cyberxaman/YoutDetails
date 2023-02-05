@@ -10,11 +10,12 @@ requirement(){
     pip3 install beautifulsoup4
 }
 
-requirements(){
-    sudo apt-get install python
-    sudo apt install python3
-    pip3 install requests
-    pip3 install beautifulsoup4
+install_kali(){
+apt update && apt upgrade
+apt install python
+apt install python3
+pip3 install requests
+pip3 install beautifulsoup4
 }
 
 install_windows(){
@@ -43,8 +44,12 @@ if [ -e "/data/data/com.termux/files/home" ]; then
 requirement
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
 install_windows
+elif [ -f "/etc/os-release" ]; then
+source /etc/os-release
+if [ "$ID" == "kali" ]; then
+install_kali
 else
-   echo "please install manually"
+echo "please install manually"
 fi
 
 banner
