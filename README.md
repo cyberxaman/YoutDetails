@@ -33,7 +33,7 @@ bash setup.sh
 ## How To Use 
 
 ```bash
-python3 Youtdetails.py
+python3 YoutDetails.py
  ```
 
 Paste the youtube video URL. The script will return the video's title, description, tags, and thumbnail URL.
