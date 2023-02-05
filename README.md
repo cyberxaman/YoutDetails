@@ -1,6 +1,8 @@
 
 # YoutDetails
 
+Get youtube video title, description, tags, thumbnail URL In linux, termux and windows 
+
 YouTube Video Info Scraper
 A tool to scrape the following information from a YouTube video:
 
