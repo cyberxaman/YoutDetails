@@ -17,6 +17,13 @@ requirements(){
     pip3 install beautifulsoup4
 }
 
+install_windows(){
+choco install python
+choco install python3
+pip3 install requests
+pip3 install beautifulsoup4
+}
+
 # make a banner for the this tool 
 banner(){
     echo -e "\e[32;1m"
@@ -33,9 +40,11 @@ _____.___.           ________          __         .__.__
 }
 
 if [ -e "/data/data/com.termux/files/home" ]; then
-    requirement
+requirement
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+install_windows
 else
-    requirements
+   echo "please install manually"
 fi
 
 banner
