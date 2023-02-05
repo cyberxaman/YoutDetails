@@ -12,6 +12,9 @@ requirement(){
     elif command -v pacman &> /dev/null; then
         sudo pacman -S python -y
         sudo pacman -S python3 -y
+    elif [ -e "/data/data/com.termux/files/home" ]; then
+        pkg install python -y
+        pkg install python3 -y
     else
         echo "Unknown package manager. Please install Python manually."
     fi
