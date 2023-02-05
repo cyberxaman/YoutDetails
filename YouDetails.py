@@ -24,7 +24,7 @@ _____.___.           ________          __         .__.__
 
 banner()
 
-url = input("Enter the video URL: ")
+url = input("\nEnter the video URL: ")
 
 html_content = requests.get(url).text
 soup = BeautifulSoup(html_content, "html.parser")
