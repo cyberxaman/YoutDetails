@@ -11,18 +11,18 @@ requirement(){
 }
 
 install_kali(){
-apt update && apt upgrade
-apt install python
-apt install python3
-pip3 install requests
-pip3 install beautifulsoup4
+    apt update && apt upgrade
+    apt install python
+    apt install python3
+    pip3 install requests
+    pip3 install beautifulsoup4
 }
 
 install_windows(){
-choco install python
-choco install python3
-pip3 install requests
-pip3 install beautifulsoup4
+    choco install python
+    choco install python3
+    pip3 install requests
+    pip3 install beautifulsoup4
 }
 
 # make a banner for the this tool 
