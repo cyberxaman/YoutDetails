@@ -3,15 +3,16 @@
 # install all the requirememt 
 requirement(){
 	apt update && apt upgrade
-	apt-get install python3
+	pkg install python
+    pkg install python3
 	pip3 install requests
     pip3 install beautifulsoup4
 }
 requirement
 
 requirements(){
-    sudo apt update
-    sudo apt-get install python3
+    sudo apt-get install python
+    sudo apt install python3
     pip3 install requests
     pip3 install beautifulsoup4
 }
@@ -33,11 +34,10 @@ echo -e "\e[33;1m MADE BY CYBERXEAL"
 }
 
 
-if [ -e "/data/data/com.termux/files/usr/bin/apt" ]; then
+if [ -e "/data/data/com.termux/files/home" ]; then
 requirement
 else
 requirements
 fi
 banner
 #now uncomment the line 
-
