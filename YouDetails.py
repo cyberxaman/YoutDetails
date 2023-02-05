@@ -1,5 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
+import os
+
+#clear
+os.system('clear')
 
 
 def banner():
