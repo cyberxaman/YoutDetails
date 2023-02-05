@@ -3,26 +3,36 @@
 
 # Function to install the requirements
 requirement(){
-    apt update && apt upgrade -y
-    apt install python -y
-    apt install python3 -y
-    pip3 install requests
-    pip3 install beautifulsoup4
-}
-
-# Function to install the requirements for Kali Linux
-install_kali(){
-    sudo apt update && apt upgrade -y
-    sudo apt install python -y
-    sudo apt install python3 -y
+    if command -v apt-get &> /dev/null; then
+        sudo apt-get update && sudo apt-get upgrade -y
+        sudo apt-get install python -y
+        sudo apt-get install python3 -y
+    elif command -v yum &> /dev/null; then
+        sudo yum update -y
+        sudo yum install python -y
+        sudo yum install python3 -y
+    elif command -v pacman &> /dev/null; then
+        sudo pacman -Syu
+        sudo pacman -S python -y
+        sudo pacman -S python3 -y
+    else
+        echo "Unknown package manager. Please install Python manually."
+    fi
     pip3 install requests
     pip3 install beautifulsoup4
 }
 
 # Function to install the requirements for Windows
 install_windows(){
-    choco install python
-    choco install python3
+    if command -v choco &> /dev/null; then
+        choco install python
+        choco install python3
+    elif command -v scoop &> /dev/null; then
+        scoop install python
+        scoop install python3
+    else
+        echo "Please download and install Python from the official website."
+    fi
     pip3 install requests
     pip3 install beautifulsoup4
 }
@@ -47,15 +57,8 @@ if [ -e "/data/data/com.termux/files/home" ]; then
   requirement
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
   install_windows
-elif [ -f "/etc/os-release" ]; then
-  source /etc/os-release
-  if [ "$ID" == "kali" ]; then
-    install_kali
-  else
-    echo "Please install the requirements manually"
-  fi
 else
-  echo "Unknown system. Please install the requirements manually"
+  requirement
 fi
 
 banner
