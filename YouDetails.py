@@ -19,6 +19,7 @@ _____.___.           ________          __         .__.__
 """)
     print("\033[33;1m MADE BY CYBERXEAL")
 
+banner()
 
 url = input("Enter the video URL: ")
 
