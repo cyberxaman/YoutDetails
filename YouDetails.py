@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-#clear
+# clear
 os.system('clear')
 
 
