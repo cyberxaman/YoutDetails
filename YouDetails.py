@@ -3,7 +3,10 @@ from bs4 import BeautifulSoup
 import os
 
 # clear
-os.system('clear')
+if os.name == 'nt':
+    os.system('cls')
+else:
+    os.system('clear')
 
 
 def banner():
