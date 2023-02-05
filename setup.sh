@@ -4,15 +4,12 @@
 # Function to install the requirements
 requirement(){
     if command -v apt-get &> /dev/null; then
-        sudo apt-get update && sudo apt-get upgrade -y
         sudo apt-get install python -y
         sudo apt-get install python3 -y
     elif command -v yum &> /dev/null; then
-        sudo yum update -y
         sudo yum install python -y
         sudo yum install python3 -y
     elif command -v pacman &> /dev/null; then
-        sudo pacman -Syu
         sudo pacman -S python -y
         sudo pacman -S python3 -y
     else
