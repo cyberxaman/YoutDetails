@@ -12,9 +12,9 @@ requirement(){
 
 # Function to install the requirements for Kali Linux
 install_kali(){
-    apt update && apt upgrade -y
-    apt install python -y
-    apt install python3 -y
+    sudo apt update && apt upgrade -y
+    sudo apt install python -y
+    sudo apt install python3 -y
     pip3 install requests
     pip3 install beautifulsoup4
 }
