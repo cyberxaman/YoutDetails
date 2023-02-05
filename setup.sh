@@ -1,23 +1,25 @@
-#!/usr/bin/bash
-# made by cyberxeal
+#!/usr/bin/env bash
+# Made by cyberxeal
 
-# install all the requirements 
+# Function to install the requirements
 requirement(){
-    apt update && apt upgrade
-    pkg install python
-    pkg install python3
+    apt update && apt upgrade -y
+    apt install python -y
+    apt install python3 -y
     pip3 install requests
     pip3 install beautifulsoup4
 }
 
+# Function to install the requirements for Kali Linux
 install_kali(){
-    apt update && apt upgrade
-    apt install python
-    apt install python3
+    apt update && apt upgrade -y
+    apt install python -y
+    apt install python3 -y
     pip3 install requests
     pip3 install beautifulsoup4
 }
 
+# Function to install the requirements for Windows
 install_windows(){
     choco install python
     choco install python3
@@ -25,9 +27,9 @@ install_windows(){
     pip3 install beautifulsoup4
 }
 
-# make a banner for the this tool 
+# Function to display a banner for the tool
 banner(){
-    echo -e "\e[32;1m"
+    echo -e "\033[32;1m"
     echo '
 _____.___.           ________          __         .__.__           
 \__  |   | ____  __ _\______ \   _____/  |______  |__|  |   ______ 
@@ -37,20 +39,23 @@ _____.___.           ________          __         .__.__
  \/                          \/     \/          \/             \/  
                                                                    
 '
-    echo -e "\e[33;1m MADE BY CYBERXEAL"
+    echo -e "\033[33;1m MADE BY CYBERXEAL"
 }
 
+# Check the system the script is being run on
 if [ -e "/data/data/com.termux/files/home" ]; then
-requirement
+  requirement
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
-install_windows
+  install_windows
 elif [ -f "/etc/os-release" ]; then
-source /etc/os-release
-if [ "$ID" == "kali" ]; then
-install_kali
+  source /etc/os-release
+  if [ "$ID" == "kali" ]; then
+    install_kali
+  else
+    echo "Please install the requirements manually"
+  fi
 else
-echo "please install manually"
+  echo "Unknown system. Please install the requirements manually"
 fi
 
 banner
-#now uncomment the line 
