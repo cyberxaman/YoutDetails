@@ -2,6 +2,20 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def banner():
+    print("\033[32;1m")
+    print("""
+_____.___.           ________          __         .__.__           
+\__  |   | ____  __ _\______ \   _____/  |______  |__|  |   ______ 
+ /   |   |/  _ \|  |  \    |  \_/ __ \   __\__  \ |  |  |  /  ___/ 
+ \____   (  <_> )  |  /    `   \  ___/|  |  / __ \|  |  |__\___ \  
+ / ______|\____/|____/_______  /\___  >__| (____  /__|____/____  > 
+ \/                          \/     \/          \/             \/  
+                                                                   
+""")
+    print("\033[33;1m MADE BY CYBERXEAL")
+
+
 url = input("Enter the video URL: ")
 
 html_content = requests.get(url).text
