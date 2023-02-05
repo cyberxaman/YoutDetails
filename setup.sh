@@ -1,14 +1,14 @@
 #!/usr/bin/bash
 # made by cyberxeal
-# install all the requirememt 
+
+# install all the requirements 
 requirement(){
-	apt update && apt upgrade
-	pkg install python
+    apt update && apt upgrade
+    pkg install python
     pkg install python3
-	pip3 install requests
+    pip3 install requests
     pip3 install beautifulsoup4
 }
-requirement
 
 requirements(){
     sudo apt-get install python
@@ -16,11 +16,10 @@ requirements(){
     pip3 install requests
     pip3 install beautifulsoup4
 }
-requirements
 
 # make a banner for the this tool 
 banner(){
-    echo -e  "\e[32;1m"
+    echo -e "\e[32;1m"
     echo '
 _____.___.           ________          __         .__.__           
 \__  |   | ____  __ _\______ \   _____/  |______  |__|  |   ______ 
@@ -30,14 +29,13 @@ _____.___.           ________          __         .__.__
  \/                          \/     \/          \/             \/  
                                                                    
 '
-echo -e "\e[33;1m MADE BY CYBERXEAL"
+    echo -e "\e[33;1m MADE BY CYBERXEAL"
 }
 
-
 if [ -e "/data/data/com.termux/files/home" ]; then
-requirement
+    requirement
 else
-requirements
+    requirements
 fi
+
 banner
-#now uncomment the line 
