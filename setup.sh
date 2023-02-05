@@ -53,3 +53,4 @@ echo "please install manually"
 fi
 
 banner
+#now uncomment the line 
