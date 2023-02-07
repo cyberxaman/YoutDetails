@@ -23,13 +23,23 @@ A tool to scrape the following information from a YouTube video:
 • Requests
 
 • BeautifulSoup
-## Installation
+## Termux Installation
 
 
 ```bash
 git clone https://github.com/cyberxaman/YoutDetails.git
 cd YoutDetails
-bash setup.sh
+chmod +x *
+./setup.sh
+```
+
+## Linux Installation 
+
+```bash
+git clone https://github.com/cyberxaman/YoutDetails.git
+cd YoutDetails
+chmod +x *
+sudo ./setup.sh
 ```
 
 ## How To Use 
